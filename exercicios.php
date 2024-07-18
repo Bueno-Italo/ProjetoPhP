@@ -63,5 +63,25 @@
         echo "5% de $valor é $calc <br/>";
         echo "50% de $valor é $calc2";
         ?>
+
+        <h2>Mostrar velocidade com calculo</h2>
+        <?php
+        function calcularVelocidade($distancia, $tempo){
+                    // Convertendo o tempo de minutos para horas
+                    $tempoEmHoras = $tempo / 60;
+            
+                    // Calculando a velocidade
+                    $velocidade = $distancia / $tempoEmHoras;
+            
+                    return $velocidade;
+                }
+            
+                $distancia = 100; // distância em quilômetros
+                $tempo = 30; // tempo em minutos
+            
+                $velocidade = calcularVelocidade($distancia, $tempo);
+            
+                echo "A velocidade é: $velocidade km/h";
+        ?>        
     </body>
 </html>
