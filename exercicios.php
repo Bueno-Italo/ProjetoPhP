@@ -82,6 +82,21 @@
                 $velocidade = calcularVelocidade($distancia, $tempo);
             
                 echo "A velocidade é: $velocidade km/h";
-        ?>        
+        ?>     
+
+        <h2>Calculo de desconto</h2>
+
+            <form method="get" action="exercicios.php">
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" required>
+                <button type="submit">Calcular Desconto</button>
+            </form>
+            <?php
+                $precoOriginal = 100.00;
+                $porcentual = 9 / 100;
+                $valorDesconto = $precoOriginal + ($porcentual * $precoOriginal);
+
+                echo "o valor final do poduto é: $valorDesconto";
+            ?>   
     </body>
 </html>
