@@ -98,5 +98,18 @@
 
                 echo "o valor final do poduto é: $valorDesconto";
             ?>   
+
+        <h2>Vetores e Matrizes</h2>
+            <pre>
+                <table border="1"><tr>
+                    <?php
+                        $c = range(5,20,2);
+                        foreach($c as $v){
+                            echo"$v";
+                        }
+                    ?>
+                </table>
+            </pre>
+
     </body>
 </html>
