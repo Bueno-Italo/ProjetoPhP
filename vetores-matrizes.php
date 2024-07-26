@@ -35,14 +35,13 @@
             <pre>
             <h2>Funções com Vetores e Matrizes</h2>
             <?php
-                echo"teste";
+                $v = array("A", "J", "X", "K");
+                echo"o vetor tem " . count($v) . "elementos <br/>"; 
+                print_r($v);
+                $v [] = "O";
+                print_r($v);
             ?>
             </pre>
         </div>
     </body>
 </html>
-
-
-
-
-
