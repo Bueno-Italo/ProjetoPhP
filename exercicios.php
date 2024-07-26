@@ -83,9 +83,8 @@
             
                 echo "A velocidade é: $velocidade km/h";
         ?>     
-
+        
         <h2>Calculo de desconto</h2>
-
             <form method="get" action="exercicios.php">
                 <label for="valor">Valor:</label>
                 <input type="number" id="valor" name="valor" required>
