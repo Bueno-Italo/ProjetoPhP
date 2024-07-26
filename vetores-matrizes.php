@@ -8,16 +8,35 @@
         <div>
             <pre>
             <h2>Trabalhando com Vetores e Matrizes</h2>
-
-
-
             <?php
-                $V = array();
-
-
-
+                $v = array(
+                    0 => 5,
+                    1 => 9, 
+                    2 => 8,
+                    3 => 7
+                );
+                print_r($v);
             ?>
-
+            </pre>
+        </div>
+        <div>
+            <pre>
+            <?php
+                $cad = array(
+                    "nome" => "Italo",
+                    "idade" => 31, 
+                    "peso" => 72.5,
+                );
+                print_r($cad);
+            ?>
+            </pre>
+        </div>
+        <div>
+            <pre>
+            <h2>Funções com Vetores e Matrizes</h2>
+            <?php
+                echo"teste";
+            ?>
             </pre>
         </div>
     </body>
