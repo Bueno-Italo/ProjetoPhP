@@ -138,5 +138,24 @@
                 );
             ?>
         </div>
+        <div>
+            <h1>Verificar se um número é Par ou Ímpar</h1>
+            <form action="process.php" method="post">
+                <label for="numero">Digite um número:</label>
+                <input type="number" id="numero" name="numero" required>
+                <button type="submit">Verificar</button>
+            </form>
+
+            <?php
+                $valor1 = 10;
+           
+                if($valor1 % 2 == 0) {
+                    echo"O numero é par";
+                }
+                else{
+                    echo"O numero é ímpar";
+                }
+            ?>
+        </div>
     </body>
 </html>
