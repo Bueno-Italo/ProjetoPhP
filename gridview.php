@@ -1,46 +1,49 @@
+<?php 
+//GET url da api teste
+$api =  'https://jsonplaceholder.typicode.com/posts';
+
+//obter os dados
+$response = file_get_contents($api);
+$data = json_decode($response , true);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <header>
         <meta charset="UTF-8">
         <title>Grid View em PHP</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
     </header>
     <body>
-        <h3>Exemplo de Grid View</h3>
-        <table>
+        <h3>Grid View em PHP V2</h3>
+        <thead>
             <tr>
-                <th>Coluna 1</th>
-                <th>Coluna 2</th>
-                <th>Coluna 3</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body 3</th>
             </tr>
-        </table>
-        <?php 
-            if ($result->num_rows >0) {
-                while($row = $result->fetch_assoc()){
-                    echo"<tr>";
-                    echo"td" . $row["coluna 1"] . "</td";
-                    echo"td" . $row["coluna 2"] . "</td";
-                    echo"td" . $row["coluna 3"] . "</td";
-                }
-            }
-            else {
-                echo"<tr><td colspan='3'>Nenhum dado encontrado</td></tr>";
-            }
-        ?>
+        </thead>
+        <tbody>
+            <?php foreach ($data as $item): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['id']);?></td>
+                    <td><?php echo htmlspecialchars($item['title']);?></td>
+                    <td><?php echo htmlspecialchars($item['body']);?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
     </body>
-    <?php
-        $servename = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "AQUI ENTRA UM DB"
-
-        //criar a coneção
-        $conect = new mysql($servername, $username, $password, $dbname);
-    
-    ?>
-    <?php 
-        //buscar info do db
-        $sql = "SELECT coluna1, coluna2, coluna3 FROM AQUI ENTRA A TABELA"
-        $result = $conect->query(sql);
-    
-    ?>
 </html>
