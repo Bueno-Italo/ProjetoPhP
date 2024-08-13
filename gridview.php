@@ -13,7 +13,19 @@
                 <th>Coluna 3</th>
             </tr>
         </table>
-
+        <?php 
+            if ($result->num_rows >0) {
+                while($row = $result->fetch_assoc()){
+                    echo"<tr>";
+                    echo"td" . $row["coluna 1"] . "</td";
+                    echo"td" . $row["coluna 2"] . "</td";
+                    echo"td" . $row["coluna 3"] . "</td";
+                }
+            }
+            else {
+                echo"<tr><td colspan='3'>Nenhum dado encontrado</td></tr>";
+            }
+        ?>
     </body>
     <?php
         $servename = "localhost";
