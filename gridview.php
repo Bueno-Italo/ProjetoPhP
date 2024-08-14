@@ -1,49 +1,72 @@
 <?php 
-//GET url da api teste
-$api =  'https://jsonplaceholder.typicode.com/posts';
+//Conectar ao DB X
+$servername = "localhost";
+$username = "COLOCAR MEU USUÁRIO";
+$password = "SENHA";
+$dbnname = "COLOCAR NOME DO DB";
 
-//obter os dados
-$response = file_get_contents($api);
-$data = json_decode($response , true);
+//Usar variavel conect para chamar a coneção com o DB
+$conect = new mysql($servername, $username, $password, $dbname);
 
+//Condicional simples para verificar as configs acima
+if ($conect->connect_error) {
+die("Conexão falhou: " . $conect->connect_error);
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-    <header>
-        <meta charset="UTF-8">
-        <title>Grid View em PHP</title>
+<!DOCTYPE html lang="pt-br">
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>GridView com DB TESTE</title>
         <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
+            body {
+            font-family: Arial, Helvetica, sans-serif;
             }
-            th, td {
-                border: 1px solid #ddd;
-                padding: 8px;
+            .gridview {
+            width: 100%;
+            border-collapse: collapse;
             }
-            th {
-                background-color: #f2f2f2;
+            .gridview th,
+            .gridview td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            }
+
+            .gridview tr:hover {
+            background-color: #f5f5f5;
             }
         </style>
-    </header>
+    </head>
     <body>
-        <h3>Grid View em PHP V2</h3>
-        <thead>
+        <h2>Tabela teste com estudantes</h2>
+        <table class="gridview">
+            <thead>
             <tr>
                 <th>ID</th>
-                <th>Title</th>
-                <th>Body 3</th>
+                <th>Nome</th>
+                <th>Curso</th>
             </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($data as $item): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($item['id']);?></td>
-                    <td><?php echo htmlspecialchars($item['title']);?></td>
-                    <td><?php echo htmlspecialchars($item['body']);?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
+            </thead>
+        </table>
+        <?php 
+            //Supondo valores de uma tabela com as seguintes colunas
+            $sql = "SELECT id, nome, curso FROM estudantes";
+            $result =  $conect->query($sql);
+
+            if($row = $result ->num_rows >0) {
+            while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["nome"] . "</td>";
+            echo "<td>" . $row["curso"] . "</td>";
+            echo "</tr>";
+            }
+            } else {
+            echo "0 resultados";
+            }
+            $conect->close();
+        ?>
     </body>
 </html>
