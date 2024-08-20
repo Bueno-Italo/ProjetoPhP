@@ -7,11 +7,24 @@
         </title>
     </head>
     <body>
-        <h1></h1>
+        <h2>Variáveis Super Globais</h2>
+        <hr>
+        <h3>$_SERVER</h3>
+        <pre>
+            <?php
+                var_dump("$_SERVER");
+            ?>
+        </pre>
+
+        <h3>$GLOBALS</h3>
+        <?php 
+            $msg = 'hello world';
+            $bye = 'bye world'
+        ?>  
+        <pre>
+            <?php 
+                echo($GLOBALS['msg']);
+            ?>
+        </pre>     
     </body>
-
-    <?php
-        echo"Teste";
-    ?>
-
 </html>
