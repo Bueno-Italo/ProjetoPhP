@@ -7,10 +7,9 @@
     <body>
         <h2> <?php echo'Olá mundo!'; ?> </h2>
         <h4> <?php echo'Seguindo a tradição do famoso hello world';?> </h4>
-    
     </body>
-</html>
 
+</html>
 
 <?php 
     /*
