@@ -30,5 +30,14 @@
 
             "Algoritmo" e "algoritmo" são tratados como nomes diferentes.
             "X" e "x" são consideradas letras diferentes.
+        
+        *Tipos de dados em PHP: string, integer, float, booleanos, array e objetos...
+            string = textos(sequência de caracteres);
+            integer = numeros inteiros;
+            float = numeros com decimais(Double);
+            booleanos = verdadeiro ou falso;
+            array = conjunto de valores;
+            objeto = criados através das classes.
+
     */
 ?>

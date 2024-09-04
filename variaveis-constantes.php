@@ -14,6 +14,7 @@
             /*
                 Os nomes das variáveis só podem ter letras, numeros ou '_'
                 São sensiveis a letras maiúsculas
+                Descobrir o valor e tipo da variável: Utilizar  var_dump()
             */
         ?>
 
@@ -22,6 +23,6 @@
         <h4>Saldo: </h4>
         <p> <?php echo $saldo; ?> </p>
         <h4>Mensagem:</h4>
-        <p> <?php echo"Olá $nome, seu saldo é: $saldo."; ?> </p>
+        <p> <?php echo"Olá $nome, seu saldo é: $saldo."; ?> </p> 
     </body>
 </html>
